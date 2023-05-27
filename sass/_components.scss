@@ -22,8 +22,8 @@
 		transform: skew(45deg);
 	}
 	.btn-special-animation {
-		position: relative;
-		transition: background-color 0.3s;
+		position: absolute;
+		transition: background-color .3s;
 		overflow: hidden;
 		z-index: 0;
 
@@ -40,5 +40,9 @@
             transition: transform .3s;
             z-index: -1;
 		}
+        &:hover::before{
+            transform: scaleX(1);
+            transform-origin: left;
+        }
 	}
 }
