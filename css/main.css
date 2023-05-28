@@ -70,7 +70,7 @@ body {
   background: none;
   border: 1px solid transparent;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1000;
 }
 .burger-btn:focus {
   outline: none;
@@ -105,6 +105,46 @@ body {
   top: 27px;
   width: 30%;
   transition-delay: 0.1s;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  z-index: 100;
+}
+.nav--active {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  color: #fff;
+  margin: 0.5em 0rem;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  font-size: 2.8rem;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  transform: scaleY(0);
+  background-color: #fff;
+  transition: transform 0.5s;
+  content: "";
+}
+.nav__item:hover::before {
+  transform: scaleY(1);
 }
 
 .header {
@@ -145,4 +185,44 @@ body {
 }
 .header__btn::before {
   background-color: #eee;
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+@media (min-width: 760px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .header__heading {
+    font-size: 6.6rem;
+  }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__btn {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .burger-btn {
+    top: 40px;
+    right: 40px;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/header-big.jpg");
+  }
+  .header__heading {
+    font-size: 10rem;
+  }
 }/*# sourceMappingURL=main.css.map */
