@@ -20,6 +20,7 @@ body {
 	font-size: 1.6rem;
 }
 
+
 // ==================================
 // Navigation
 // ==================================
@@ -55,12 +56,12 @@ body {
 	}
 	&__bars {
 		width: 100%;
-
+		
 		&::after {
 			top: 13px;
 			width: 60%;
 		}
-
+		
 		&::before {
 			top: 27px;
 			width: 30%;
@@ -106,6 +107,11 @@ body {
 			transform: scaleY(1);
 		}
 	}
+}
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
 }
 // ==================================
 // Header
@@ -603,17 +609,17 @@ body {
 				width: 50%;
 			}
 		}
-		&__box-title{
+		&__box-title {
 			font-size: 2.4rem;
 			text-align: center;
 		}
-		&__box-list{
+		&__box-list {
 			list-style: none;
 		}
-		&__box-list-item{
+		&__box-list-item {
 			margin-bottom: 1em;
 			text-align: center;
-			a{
+			a {
 				color: $light-white;
 				text-decoration: none;
 			}
